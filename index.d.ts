@@ -25,20 +25,20 @@ export as namespace HypherLib;
 /*~ This declaration specifies that the class constructor function
  *~ is the exported object from the file
  */
-export = Hypher;
+//export = Hypher;
 
 /*~ Write your module's methods and properties in this class */
-declare class Hypher {
-    constructor(language: MyClass.Language);
+export declare class Hypher {
+    constructor(language: Hypher.Language);
 
-    trie : MyClass.TrieNode;
+    trie : Hypher.TrieNode;
     leftMin :number;
     rightMin:number;
-    exceptions:{[string]:array<string>}
+    exceptions:{[exceptionName:string]:Array<string>}
 
-    createTrie (patternObject:Object ): MyClass.TrieNode;
+    createTrie (patternObject:Object ): Hypher.TrieNode;
     hyphenateText(str:string, minLength:number):string;
-    hyphenate(word:string):array<string>;
+    hyphenate(word:string):Array<string>;
     
 }
 
@@ -55,9 +55,9 @@ declare namespace Hypher {
         patterns: Object;
         leftmin: number;
         rightmin:number;
-    };
+    }
     export interface TrieNode{
-        _points:array<number>;
+        _points:Array<number>;
     }
     
 }
